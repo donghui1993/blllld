@@ -8,18 +8,18 @@ like this
 </div>
 ```
 
-* by brt orangejs 
+* by brt blllldjs 
 
 ```
-<script type="brt/orange">
+<script type="brt/blllld">
 .someclass>span{ this is text }{ inner node }
 </script>
 ```
 
-* or by format orangejs
+* or by format blllldjs
 
 ```
-<script type="format/orange" space="2">
+<script type="format/blllld" space="2">
 .someclass
   span{ this is text }
     { inner node }

@@ -1,0 +1,24 @@
+{
+  "name": "blllld",
+  "version": "1.0.0",
+  "description": "this is an text model element template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donghui1993/blllld.git"
+  },
+  "keywords": ["blllld"],
+  "author": "donghui1993",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/donghui1993/blllld/issues"
+  },
+  "homepage": "https://github.com/donghui1993/blllld#readme",
+  "devDependencies": {
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8"
+  }
+}

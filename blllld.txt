@@ -1,0 +1,97 @@
+template element parser 
+import Mytemplate from 'mytemplate'
+import ChildTemplate from 'ChildTemplate'
+
+div{@textContext}>
+	span{$htmlContext}+
+	div[@attr,@attr.key=@attr.val,nval=val]+
+	Mytemplate>
+		ChildTemplate
+
+
+<div>{{textContext}}
+	<span>{{htmlContext}}</span>
+	<div {{...attr}}></div>
+	<mytemplate>
+		<childtemplate></childtemplate>
+	</mytemplate>
+<div>
+
+
+在渲染到不是html组件时，取页面组件，如果没有，渲染报错，查无组建
+
+components:{Mytemplate}
+
+用@作为引用符，在data里面可以随意引用，修改，内部只会被修改为文本，
+而$引用符将会被修饰为html内容。需要传递一个html内容。
+
+data:{
+	textContext:{	}
+	attr:{ key:value }
+	htmlContext: function (safety) {
+		return true	需要返回true，否则将认为是不安全的html内容，将会引起攻击
+	}
+}
+
+作为文本内容，是可以有子元素节点的，
+作为html内容将不再渲染其子元素节点。
+
+
+ <AnchoredHeading level={1}>
+        <span>Hello</span> world!
+      </AnchoredHeading>
+
+AnchoredHeading[level=1]
+	span{Hello}
+	{ world! }
+
+<script type="text/javascript">
+
+class Template extends Component {
+	
+	constructor () { }
+	struct () {
+		let header = {}
+		return (
+		div.container{@text}
+			ul.menu[forchild=@forusedata]
+				ChildTemplate[...item]
+			span.text[forself=@selfloop]{ header }
+
+		<div className="container" >
+			<ul className="menu" >
+				{ this.state.forusedata.map((item)=>{ return <ChildTemplate {...item} >  }) }
+			</ul>
+			{ this.state.selfloop.map(()=>{ return <span className="text">{ this.state.header }</span>  }) }
+		</div>
+		)	
+	}
+
+
+	get forusedata () {
+
+	}
+
+	get text () {
+
+	}
+
+	get html () {
+
+	}
+
+	get selfloop () {
+
+	}
+
+	data () {
+		return {
+			state:"is true",
+			header:"这是header"
+		}
+	}
+
+	components () { }
+}
+
+</script>
