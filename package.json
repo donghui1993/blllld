@@ -4,7 +4,7 @@
   "description": "this is an text model element template",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack -w --mode development"
   },
   "repository": {
     "type": "git",

@@ -1,12 +1,9 @@
-const path = require('path')
-const config = {
-  entry: {
-    blllld:path.resolve(__dirname, './lib/blllld.ts')
-  },
-  module: {
-    rules: [
-      { test: /\.ts$/, use: 'ts-loader' }
-    ]
+const path = require('path');
+
+module.exports = {
+  entry: './lib/index.js',
+  output: {
+      path: path.resolve(__dirname, 'dist'),
+    filename: 'blllld.js'
   }
 };
-module.exports = config;
